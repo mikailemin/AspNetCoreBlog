@@ -9,6 +9,11 @@ builder.Services.AddControllersWithViews();
 // databaseContext i servis olarak ekliyoruz.
 builder.Services.AddDbContext<DatabaseContext>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(u =>
+{
+    u.LoginPath = "/Admin/Login"; // Kullanıcı giriş yapmışsa bu adrese yönlendirir
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

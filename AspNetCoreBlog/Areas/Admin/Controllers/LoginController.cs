@@ -52,5 +52,10 @@ namespace AspNetCoreBlog.Areas.Admin.Controllers
             }
             return View(model);
         }
+        public async Task<IActionResult> SignOutAsync()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

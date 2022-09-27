@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AspNetCoreBlog.Data;
 using AspNetCoreBlog.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AspNetCoreBlog.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("Admin"),Authorize]
     public class UsersController : Controller
     {
         private readonly DatabaseContext _context;

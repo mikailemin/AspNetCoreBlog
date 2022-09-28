@@ -13,6 +13,11 @@ namespace AspNetCoreBlog.Entities
         public bool IsActive { get; set; }
         [Display(Name ="Ekleme Tarihi"),ScaffoldColumn(false)] // ScaffoldColumn attiribute ü View larda CreateDate alanı için crud sayfalarında veri giriş alanı oluşmasını sağlar.
         public DateTime? CreateDate { get; set; } =DateTime.Now;
+        public List<Post> Posts { get; set; }
+        public Category()
+        {
+            Posts = new List<Post>();
+        }
 
     }
 }
